@@ -12,17 +12,17 @@ public class LevelManager : MonoBehaviour
     public Transform startPoint;
     public Transform[] path;
 
-    [Header("스테이지 스폰 몬스터")]
+    [Header("Spawn Enemy")]
     [SerializeField] public GameObject spawnEnemy;
     private int currentSpawnMonsterNumber = 0;
 
-    [Header("스테이지 스폰 몬스터 부모 객체")]
+    [Header("Spawn FolderObject Enemy")]
     [SerializeField] public GameObject parentEnemy;
     private GameObject[] enemyPool;
 
-    [Header("스테이지 당 스폰 몬스터 수")]
+    [Header("Spawn Enemy Number")]
     [SerializeField] public int enemyNumber = 60;
-    [Header("풀링 배열 크기 설정")]
+    [Header("Enemy Pool Number (ObjectPooling")]
     [SerializeField] public int enemyPoolNumber = 15;
 
     private void Awake()
@@ -46,11 +46,11 @@ public class LevelManager : MonoBehaviour
     }
     IEnumerator EnableEnemy()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
 
         if (currentSpawnMonsterNumber >= enemyNumber)
         {
-            Debug.Log(string.Format("코루틴 중단"));
+            //Debug.Log(string.Format("End Coroutine"));
             StopCoroutine("EnableEnemy");
             yield return null;
         }
@@ -60,7 +60,7 @@ public class LevelManager : MonoBehaviour
             if (!enemy.active)
             {
                 enemy.SetActive(true);
-                Debug.Log(string.Format("{0} 마리 생성 되었습니다.", currentSpawnMonsterNumber));
+                //Debug.Log(string.Format("{0}st spawn enemy!", currentSpawnMonsterNumber));
                 currentSpawnMonsterNumber++;
                 break;
             }
