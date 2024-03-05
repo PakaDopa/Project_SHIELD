@@ -11,7 +11,6 @@ public class EnemyMovement : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2.0f;
 
-
     private Transform target;
     private int pathIndex = 0;
     private Vector3 savePos = Vector3.zero;
@@ -24,7 +23,6 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
         if(Vector2.Distance(target.position, transform.position) <= 0.1f)
         {
             pathIndex++;
