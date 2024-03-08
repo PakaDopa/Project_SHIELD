@@ -17,8 +17,6 @@ public class CardTowerManager : MonoBehaviour
 
     public void SetTower(ScriptableObject _scripteableObject)
     {
-        //조건 걸어주기 (돈 등등)
-
         //
         RaycastHit2D[] hits = RayColliderObjectManager.Instance.GetCurrentMouseRayColliderObjects(1 << LayerMask.NameToLayer("Plot"));
         if (hits.Length == 0 || hits.Length > 1 || _towersParent == null)

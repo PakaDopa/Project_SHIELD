@@ -8,14 +8,14 @@ using UnityEngine;
 public class PlotScript : MonoBehaviour
 {
     [SerializeField] private LineRenderer renderer;
-
+        
     private void OnMouseEnter()
     {
-        DrawCicle(4, 120);
+        //DrawCicle(4, 120);
     }
     private void OnMouseLeave()
     {
-        renderer.positionCount = 0;
+        //renderer.positionCount = 0;
     }
     public void DrawCicle(float radius, int steps)
     {

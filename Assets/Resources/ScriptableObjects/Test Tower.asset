@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Test Tower
   m_EditorClassIdentifier: 
   _towerName: Normal Tower
-  _attackSpeed: 1
+  _attackSpeed: 0.1
   _attackRange: 5
   _spriteName: Tower02_Lv01

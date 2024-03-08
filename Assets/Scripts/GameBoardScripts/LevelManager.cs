@@ -57,7 +57,7 @@ public class LevelManager : MonoBehaviour
 
         foreach (GameObject enemy in enemyPool)
         {
-            if (!enemy.active)
+            if (!enemy.activeSelf)
             {
                 enemy.SetActive(true);
                 //Debug.Log(string.Format("{0}st spawn enemy!", currentSpawnMonsterNumber));

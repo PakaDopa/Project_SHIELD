@@ -28,10 +28,8 @@ public class EnemyMovement : MonoBehaviour
             pathIndex++;
             if (pathIndex == LevelManager.main.path.Length)
             {
-                this.pathIndex = 0;
-                target = LevelManager.main.path[pathIndex];
-                this.transform.position = savePos;
-                this.gameObject.SetActive(false);
+                ResetEnemyPosition();
+                gameObject.SetActive(false);
                 return;
             }
             else
@@ -44,5 +42,12 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 direction = (target.position - transform.position).normalized;
         rb.velocity = direction * moveSpeed;
+    }
+
+    public void ResetEnemyPosition()
+    {
+        pathIndex = 0;
+        target = LevelManager.main.path[pathIndex];
+        transform.position = savePos;
     }
 }
